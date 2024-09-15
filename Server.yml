@@ -1,0 +1,40 @@
+Defaults: &defaults
+ Operating System: Ubuntu 20.04
+ Web Server: 
+  name: Nginx
+  Version: 1.18.0
+  Port: 80
+ Database:
+  name: PostgreSQL
+  Version: 13
+  Port: 5432
+
+Development Environment:
+ <<: *defaults
+ Environment Name: Development
+ Server Name: dev-server
+ IP Address: 10.0.0.1
+ Database:
+  Username: dev_user
+  Password: dev_pass
+
+Staging Environment:
+ <<: *defaults
+ Environment Name: Staging
+ Server Name: staging-server
+ IP Address: 10.0.0.2
+ Database:
+  Username: stage_user
+  Password: stage_pass
+
+Production Environment:
+ <<: *defaults
+ Environment Name: Production
+ Server Name: prod-server
+ IP Address: 10.0.0.3
+ Database:
+  Username: prod_user
+  Password: prod_pass
+ Additional Configuration:
+  SSL Enabled: true
+  Load Balancer: Enabled
