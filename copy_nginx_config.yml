@@ -1,0 +1,12 @@
+---
+- name: Copy Nginx configuration to web servers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Copy Nginx configuration file
+      copy:
+        src: ~/ansible/nginx.conf
+        dest: /etc/nginx/sites-available/default
+        owner: root
+        group: root
+        mode: 0644

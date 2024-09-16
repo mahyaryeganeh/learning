@@ -1,0 +1,9 @@
+---
+- name: Install Nginx on web servers
+  hosts: webservers
+  become: yes  # Use sudo to execute tasks
+  tasks:
+    - name: Ensure Nginx is installed
+      apt:
+        name: nginx
+        state: present
