@@ -3,6 +3,8 @@
   hosts: localhost
   become: yes  # Use sudo to execute tasks
   tasks:
+    - name: Sleep to extend job runtime
+      command: sleep 600  # Sleeps for 10 minutes
     - name: Ensure Nginx is installed
       apt:
         name: nginx
