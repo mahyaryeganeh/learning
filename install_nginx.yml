@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx on web servers
-  hosts: webservers
+  hosts: localhost
   become: yes  # Use sudo to execute tasks
   tasks:
     - name: Ensure Nginx is installed

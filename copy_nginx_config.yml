@@ -1,6 +1,6 @@
 ---
 - name: Copy Nginx configuration to web servers
-  hosts: webservers
+  hosts: localhost
   become: yes
   tasks:
     - name: Copy Nginx configuration file

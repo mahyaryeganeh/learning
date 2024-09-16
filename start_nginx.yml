@@ -1,6 +1,6 @@
 ---
 - name: Start and enable Nginx service
-  hosts: webservers
+  hosts: localhost
   become: yes
   tasks:
     - name: Start Nginx service
