@@ -3,11 +3,7 @@
   hosts: localhost
   gather_facts: no  # Avoid privilege escalation during fact gathering
   tasks:
-    - name: Sleep to extend job runtime
-      command: sleep 600  # Sleeps for 10 minutes
-
     - name: Ensure Nginx is installed
-      become: yes  # Use sudo to execute tasks only after sleep
       apt:
         name: nginx
         state: present
